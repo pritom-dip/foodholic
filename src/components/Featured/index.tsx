@@ -5,7 +5,15 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CustomBox from '@/utils/CustomBox';
 import Image from 'next/image';
 
-const FeaturedPosts = [
+interface IFeaturePosts {
+  id: number;
+  name: string;
+  image: string;
+  rating: number;
+  price: number;
+}
+
+const FeaturedPosts: IFeaturePosts[] = [
   {
     id: 1,
     name: 'Grilled Chicken Bowl',
@@ -37,7 +45,7 @@ const Featured = () => {
         sx={{ alignItems: 'center', justifyContent: 'space-between' }}
         spacing={6}
       >
-        {FeaturedPosts?.map((post) => {
+        {FeaturedPosts?.map((post: IFeaturePosts) => {
           return (
             <Grid item xs={12} md={4} key={post.id}>
               <CustomFeatureBox
@@ -46,11 +54,11 @@ const Featured = () => {
                   borderTopRightRadius: '70px'
                 }}
               >
-                <Typography variant='h5'>Grilled Chicken Bowl</Typography>
+                <Typography variant='h5'>{post?.name}</Typography>
                 <Typography component='div'>
                   <Rating
                     name='read-only'
-                    value={5}
+                    value={post?.rating}
                     readOnly
                     sx={{ color: '#12C659', fontSize: '14px' }}
                   />
@@ -63,14 +71,16 @@ const Featured = () => {
                       marginRight: '10px'
                     }}
                   />
-                  <Typography variant='h5'>$40.00</Typography>
+                  <Typography variant='h5'>
+                    ${post?.price.toFixed(2)}
+                  </Typography>
                 </CustomBox>
 
                 <Typography
                   component='div'
                   sx={{ position: 'absolute', bottom: '-10px', right: '0px' }}
                 >
-                  <Image src={FeaturedImage1} alt='name' />
+                  <Image src={post?.image} alt='name' />
                 </Typography>
               </CustomFeatureBox>
             </Grid>

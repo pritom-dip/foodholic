@@ -1,13 +1,15 @@
+import About from '@/components/About';
 import Banner from '@/components/Banner';
 import Featured from '@/components/Featured';
-import Header from '@/components/Header';
+import { Typography } from '@mui/material';
 
 const HomePage = () => {
   return (
     <>
-      <Header />
       <Banner />
       <Featured />
+      <About />
+      <Typography component='div' sx={{ marginBottom: '60px' }}></Typography>
     </>
   );
 };
