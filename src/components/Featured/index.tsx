@@ -19,6 +19,13 @@ const FeaturedPosts = [
     image: FeaturedImage1,
     rating: 5,
     price: 40
+  },
+  {
+    id: 3,
+    name: 'Grilled Chicken Bowl',
+    image: FeaturedImage1,
+    rating: 5,
+    price: 40
   }
 ];
 
@@ -28,39 +35,47 @@ const Featured = () => {
       <Grid
         container
         sx={{ alignItems: 'center', justifyContent: 'space-between' }}
+        spacing={6}
       >
-        <Grid item xs={12} md={4}>
-          <CustomFeatureBox>
-            <Typography variant='h5'>Grilled Chicken Bowl</Typography>
-            <Typography component='div'>
-              <Rating
-                name='read-only'
-                value={5}
-                readOnly
-                sx={{ color: '#12C659', fontSize: '14px' }}
-              />
-            </Typography>
-            <CustomBox>
-              <ShoppingCartIcon
-                sx={{ fontSize: '14px', color: '#FE5F38', marginRight: '10px' }}
-              />
-              <Typography variant='h5'>$40.00</Typography>
-            </CustomBox>
+        {FeaturedPosts?.map((post) => {
+          return (
+            <Grid item xs={12} md={4} key={post.id}>
+              <CustomFeatureBox
+                sx={{
+                  borderBottomRightRadius: '70px',
+                  borderTopRightRadius: '70px'
+                }}
+              >
+                <Typography variant='h5'>Grilled Chicken Bowl</Typography>
+                <Typography component='div'>
+                  <Rating
+                    name='read-only'
+                    value={5}
+                    readOnly
+                    sx={{ color: '#12C659', fontSize: '14px' }}
+                  />
+                </Typography>
+                <CustomBox>
+                  <ShoppingCartIcon
+                    sx={{
+                      fontSize: '14px',
+                      color: '#FE5F38',
+                      marginRight: '10px'
+                    }}
+                  />
+                  <Typography variant='h5'>$40.00</Typography>
+                </CustomBox>
 
-            <Typography
-              component='div'
-              sx={{ position: 'absolute', bottom: '0px', right: '0px' }}
-            >
-              <Image src={FeaturedImage1} alt='name' />
-            </Typography>
-          </CustomFeatureBox>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          asdas
-        </Grid>
-        <Grid item xs={12} md={4}>
-          asdas
-        </Grid>
+                <Typography
+                  component='div'
+                  sx={{ position: 'absolute', bottom: '-10px', right: '0px' }}
+                >
+                  <Image src={FeaturedImage1} alt='name' />
+                </Typography>
+              </CustomFeatureBox>
+            </Grid>
+          );
+        })}
       </Grid>
     </Container>
   );
