@@ -34,7 +34,7 @@ const AboutContents: IAboutContent[] = [
 
 const About = () => {
   return (
-    <Container maxWidth='xl' sx={{ marginTop: '100px' }}>
+    <Container maxWidth='xl' sx={{ marginTop: '100px', marginBottom: '100px' }}>
       <Typography
         component='div'
         sx={{

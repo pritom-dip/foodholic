@@ -1,41 +1,11 @@
 import { Container, Grid, Paper, Rating, Typography } from '@mui/material';
-import FeaturedImage1 from '@/assets/icons/feature1.svg';
+
 import CustomFeatureBox from '@/utils/CustomFeatureBox';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CustomBox from '@/utils/CustomBox';
 import Image from 'next/image';
-
-interface IFeaturePosts {
-  id: number;
-  name: string;
-  image: string;
-  rating: number;
-  price: number;
-}
-
-const FeaturedPosts: IFeaturePosts[] = [
-  {
-    id: 1,
-    name: 'Grilled Chicken Bowl',
-    image: FeaturedImage1,
-    rating: 5,
-    price: 40
-  },
-  {
-    id: 2,
-    name: 'Grilled Chicken Bowl',
-    image: FeaturedImage1,
-    rating: 5,
-    price: 40
-  },
-  {
-    id: 3,
-    name: 'Grilled Chicken Bowl',
-    image: FeaturedImage1,
-    rating: 5,
-    price: 40
-  }
-];
+import FeaturedPosts from '@/mockData/Products';
+import { IFeaturePosts } from '@/types/Products';
 
 const Featured = () => {
   return (
