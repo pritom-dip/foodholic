@@ -1,9 +1,12 @@
 import SearchBar from '@/common/SearchBar';
+import FeaturedPosts from '@/mockData/Products';
+import { IFeaturePosts } from '@/types/Products';
 import CustomBox from '@/utils/CustomBox';
+import CustomButton from '@/utils/Custombutton';
 import { Container, Grid, Typography } from '@mui/material';
-import { styled } from '@mui/system';
+import { Box, styled } from '@mui/system';
 import React, { useState } from 'react';
-import Foods from '../Foods';
+import Food from '../Food';
 
 const filters: string[] = ['Breakfast', 'Lunches', 'Dinner', 'Fast Food'];
 
@@ -25,11 +28,12 @@ const FilterBox = styled('div')({
 
 function PopularRecipies() {
   const [filter, setFilter] = useState<string>('Breakfast');
+  const [foods, setFoods] = useState<IFeaturePosts[]>(FeaturedPosts);
 
   return (
     <Typography
       component='div'
-      sx={{ background: '#FFF9F1', padding: '50px 0' }}
+      sx={{ background: '#FFF9F1', padding: '80px 0' }}
     >
       <Container maxWidth='xl'>
         <CustomBox sx={{ justifyContent: 'space-between' }}>
@@ -37,13 +41,12 @@ function PopularRecipies() {
           <SearchBar />
         </CustomBox>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={4} sx={{ paddingTop: '50px' }}>
           <Grid item xs={12} md={3}>
             <CustomBox
               sx={{
                 justifyContent: 'center',
                 flexDirection: 'column',
-                marginTop: '30px',
                 alignItems: 'flex-start'
               }}
             >
@@ -64,7 +67,25 @@ function PopularRecipies() {
           </Grid>
 
           <Grid item xs={12} md={9}>
-            <Foods />
+            <CustomBox
+              sx={{
+                marginTop: '50px',
+                justifyContent: 'space-between'
+              }}
+            >
+              {foods?.map((food: IFeaturePosts) => (
+                <Food key={food?.id} food={food} />
+              ))}
+            </CustomBox>
+
+            <CustomBox sx={{ justifyContent: 'center', marginTop: '50px' }}>
+              <CustomButton
+                variant='contained'
+                sx={{ textAlign: { xs: 'center', md: 'left' } }}
+              >
+                View All
+              </CustomButton>
+            </CustomBox>
           </Grid>
         </Grid>
       </Container>

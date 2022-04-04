@@ -1,5 +1,4 @@
 import { Container, Grid, Paper, Rating, Typography } from '@mui/material';
-
 import CustomFeatureBox from '@/utils/CustomFeatureBox';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CustomBox from '@/utils/CustomBox';
