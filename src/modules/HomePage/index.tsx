@@ -6,6 +6,7 @@ import { Container, Typography } from '@mui/material';
 import Image from 'next/image';
 import SecondaryBanner from '@/assets/icons/secondary_banner.svg';
 import CustomBox from '@/utils/CustomBox';
+import Feedbacks from '@/components/Feedbacks';
 
 const HomePage = () => {
   return (
@@ -19,6 +20,8 @@ const HomePage = () => {
           <Image src={SecondaryBanner} alt='banner' />
         </CustomBox>
       </Container>
+
+      <Feedbacks />
 
       <Typography component='div' sx={{ marginBottom: '60px' }}></Typography>
     </>

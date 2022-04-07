@@ -26,10 +26,11 @@ const Featured = () => {
                 <Typography variant='h5'>{post?.name}</Typography>
                 <Typography component='div'>
                   <Rating
+                    size='small'
                     name='read-only'
                     value={post?.rating}
                     readOnly
-                    sx={{ color: '#12C659', fontSize: '14px' }}
+                    sx={{ color: '#12C659' }}
                   />
                 </Typography>
                 <CustomBox>
