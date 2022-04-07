@@ -11,6 +11,8 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CustomBox from '@/utils/CustomBox';
+import Logo from '@/assets/icons/FoodHolic.svg';
+import Image from 'next/image';
 
 const pages = ['Home', 'Menu', 'Careers', 'About'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -41,7 +43,7 @@ const Header = () => {
   return (
     <AppBar position='static' color='transparent' sx={{ boxShadow: 'none' }}>
       <Container maxWidth='xl'>
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{ minHeight: '84px !important' }}>
           <Typography
             variant='h1'
             noWrap
@@ -49,7 +51,7 @@ const Header = () => {
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
             color={'primary'}
           >
-            FOODHOLIC
+            <Image src={Logo} alt='logo' />
           </Typography>
 
           {/* Mobile */}
@@ -97,7 +99,7 @@ const Header = () => {
             component='div'
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            FOODHOLIC
+            <Image src={Logo} alt='logo' />
           </Typography>
 
           <Box
@@ -123,7 +125,7 @@ const Header = () => {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'block' } }}>
             <CustomBox>
               <ShoppingCartIcon
                 sx={{
