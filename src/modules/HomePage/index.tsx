@@ -23,10 +23,7 @@ const HomePage = () => {
       </Container>
 
       <Feedbacks />
-
       <Addvertisement />
-
-      <Typography component='div' sx={{ marginBottom: '60px' }}></Typography>
     </>
   );
 };
