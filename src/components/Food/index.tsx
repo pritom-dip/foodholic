@@ -1,5 +1,5 @@
 import CustomFeatureBox from '@/utils/CustomFeatureBox';
-import { Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Image from 'next/image';
 import FoodImage1 from '@/assets/icons/food1.svg';
@@ -25,58 +25,60 @@ const TriangleDiv = styled('div')({
 const Food = ({ food }: { food: IFeaturePosts }) => {
   return (
     <>
-      <CustomBox sx={{ flexDirection: 'column' }}>
-        <CustomFeatureBox
-          sx={{
-            maxWidth: '240px',
-            mx: 'auto',
-            alignItems: 'center',
-            display: 'flex',
-            flexDirection: 'column',
-            background: '#fff'
-          }}
-        >
-          <ImageOverDiv>
-            <Image src={FoodImage1} alt='name' />
-          </ImageOverDiv>
-
-          <Typography
-            variant='h4'
-            sx={{ fontSize: '18px', fontWeight: '600', marginTop: '10px' }}
+      <Grid item xs={12} md={4}>
+        <CustomBox sx={{ flexDirection: 'column' }}>
+          <CustomFeatureBox
+            sx={{
+              maxWidth: '240px',
+              mx: 'auto',
+              alignItems: 'center',
+              display: 'flex',
+              flexDirection: 'column',
+              background: '#fff'
+            }}
           >
-            {food?.name}
-          </Typography>
+            <ImageOverDiv>
+              <Image src={FoodImage1} alt='name' />
+            </ImageOverDiv>
 
-          <Typography
-            component='p'
-            textAlign='center'
-            sx={{ fontSize: '10px', margin: '10px 0' }}
-          >
-            Made from the best chicken from the local farm.
-          </Typography>
+            <Typography
+              variant='h4'
+              sx={{ fontSize: '18px', fontWeight: '600', marginTop: '10px' }}
+            >
+              {food?.name}
+            </Typography>
 
-          <CustomBox sx={{ justifyContent: 'space-between', width: '100%' }}>
-            <CustomBox>
-              <StarIcon sx={{ color: '#FE5F38', fontSize: '16px' }} />
-              <Typography
-                variant='h2'
-                fontSize='14px'
-                sx={{ fontWeight: 500, marginLeft: '5px' }}
-              >
-                {food?.rating.toFixed(1)}
-              </Typography>
+            <Typography
+              component='p'
+              textAlign='center'
+              sx={{ fontSize: '10px', margin: '10px 0' }}
+            >
+              Made from the best chicken from the local farm.
+            </Typography>
+
+            <CustomBox sx={{ justifyContent: 'space-between', width: '100%' }}>
+              <CustomBox>
+                <StarIcon sx={{ color: '#FE5F38', fontSize: '16px' }} />
+                <Typography
+                  variant='h2'
+                  fontSize='14px'
+                  sx={{ fontWeight: 500, marginLeft: '5px' }}
+                >
+                  {food?.rating.toFixed(1)}
+                </Typography>
+              </CustomBox>
+              <Typography variant='h5'>${40.0}</Typography>
             </CustomBox>
-            <Typography variant='h5'>${40.0}</Typography>
-          </CustomBox>
 
-          <CustomBox sx={{ marginTop: '20px' }}>
-            <ShoppingCartIcon
-              sx={{ color: '#FE5F38', fontSize: '40px', cursor: 'pointer' }}
-            />
-          </CustomBox>
-        </CustomFeatureBox>
-        <TriangleDiv />
-      </CustomBox>
+            <CustomBox sx={{ marginTop: '20px' }}>
+              <ShoppingCartIcon
+                sx={{ color: '#FE5F38', fontSize: '40px', cursor: 'pointer' }}
+              />
+            </CustomBox>
+          </CustomFeatureBox>
+          <TriangleDiv />
+        </CustomBox>
+      </Grid>
     </>
   );
 };

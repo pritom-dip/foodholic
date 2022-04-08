@@ -21,6 +21,20 @@ function Feedbacks() {
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
         spaceBetween={0}
+        breakpoints={{
+          320: {
+            slidesPerView: 1
+          },
+          640: {
+            slidesPerView: 1
+          },
+          768: {
+            slidesPerView: 1
+          },
+          1024: {
+            slidesPerView: 3
+          }
+        }}
       >
         {feedbackArr?.map((singleFeedback: IFeedback) => (
           <SwiperSlide key={singleFeedback?.id}>

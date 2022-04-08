@@ -9,18 +9,19 @@ const Heading = ({
   customStyle?: any;
 }) => {
   return (
-    <CustomBox sx={{ justifyContent: 'center', maxWidth: '400px', mx: 'auto' }}>
-      <Typography
-        sx={{
-          mx: 'auto',
-          textAlign: 'center',
-          ...customStyle
-        }}
-        variant='h1'
-      >
+    <Typography
+      component='div'
+      sx={{
+        marginBottom: '40px',
+        maxWidth: { md: '400px', sm: '280px' },
+        mx: 'auto',
+        textAlign: 'center'
+      }}
+    >
+      <Typography variant='h1' sx={{ padding: '0px 15px' }}>
         {title}
       </Typography>
-    </CustomBox>
+    </Typography>
   );
 };
 

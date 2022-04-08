@@ -73,9 +73,11 @@ function PopularRecipies() {
                 justifyContent: 'space-between'
               }}
             >
-              {foods?.map((food: IFeaturePosts) => (
-                <Food key={food?.id} food={food} />
-              ))}
+              <Grid container spacing={6}>
+                {foods?.map((food: IFeaturePosts) => (
+                  <Food key={food?.id} food={food} />
+                ))}
+              </Grid>
             </CustomBox>
 
             <CustomBox sx={{ justifyContent: 'center', marginTop: '50px' }}>
