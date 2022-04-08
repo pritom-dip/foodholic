@@ -22,6 +22,7 @@ function MyApp({ Component, pageProps }: any) {
         maxSnack={3}
         preventDuplicate
         hideIconVariant
+        autoHideDuration={3000}
         anchorOrigin={{
           vertical: 'top',
           horizontal: 'right'

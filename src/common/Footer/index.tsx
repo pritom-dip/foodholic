@@ -7,7 +7,8 @@ import CustomInput from '@/utils/CustomInput';
 import { styled } from '@mui/system';
 import { validateEmail } from '@/helpers/validateEmail';
 import React from 'react';
-import { SnackbarProvider, VariantType, useSnackbar } from 'notistack';
+import { useSnackbar } from 'notistack';
+import { Facebook, Instagram, Twitter } from '@mui/icons-material';
 
 const CustomButton = styled(Button)({
   padding: '15px 40px',
@@ -59,6 +60,16 @@ const Footer = () => {
               <CustomButton onClick={handleClick} variant='contained'>
                 Subscribe
               </CustomButton>
+            </CustomBox>
+
+            <CustomBox sx={{ gap: '10px' }}>
+              <Facebook sx={{ color: '#1976D2' }} />
+              <Instagram
+                sx={{
+                  color: '#FFC107'
+                }}
+              />
+              <Twitter sx={{ color: '#03A9F4' }} />
             </CustomBox>
           </Stack>
         </Grid>
