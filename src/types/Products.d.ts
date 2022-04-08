@@ -1,5 +1,5 @@
 export interface IFeaturePosts {
-  id: number;
+  id: number | string;
   name: string;
   image: string;
   rating: number;

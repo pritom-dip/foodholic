@@ -37,7 +37,7 @@ const Food = ({ food }: { food: IFeaturePosts }) => {
           }}
         >
           <ImageOverDiv>
-            <Image src={food?.image} alt='name' />
+            <Image src={FoodImage1} alt='name' />
           </ImageOverDiv>
 
           <Typography

@@ -18,11 +18,10 @@ class MyDocument extends Document {
       <Html lang='en'>
         <Head>
           <meta name='description' content='Developed by pritom' />
-
           <link
-            href='https://fonts.googleapis.com/css2?family=Montserrat&display=swap'
+            href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap'
             rel='stylesheet'
-          ></link>
+          />
 
           <meta name='robots' content='noindex, follow' />
           <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />

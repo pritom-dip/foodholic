@@ -1,33 +1,12 @@
 import CustomFeatureBox from '@/utils/CustomFeatureBox';
-import { Container, Grid, Rating } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import Heading from '../Heading';
 
-const feedbackArr = [
-  {
-    id: 1,
-    quote:
-      '“ One of my favorite Mexican food restaurant. I can assure you this food is authentic !!!',
-    by: 'Mr. Borris Nubadu',
-    location: 'Nevada , USA',
-    image: ''
-  },
-  {
-    id: 2,
-    quote:
-      '“ One of my favorite Mexican food restaurant. I can assure you this food is authentic !!!',
-    by: 'Mr. Borris Nubadu',
-    location: 'Nevada , USA',
-    image: ''
-  },
-  {
-    id: 3,
-    quote:
-      '“ One of my favorite Mexican food restaurant. I can assure you this food is authentic !!!',
-    by: 'Mr. Borris Nubadu',
-    location: 'Nevada , USA',
-    image: ''
-  }
-];
+import Feedback from '../Feedback';
+import 'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { feedbackArr } from '@/mockData/Feedbacks';
+import { IFeedback } from '@/types/Feedbacks';
 
 function Feedbacks() {
   return (
@@ -37,21 +16,18 @@ function Feedbacks() {
         title={'What our customers are saying'}
       />
 
-      <Grid container spacing={4}>
-        <Grid item md={4}>
-          <CustomFeatureBox>
-            <Rating value={4} readOnly emptyIcon={<></>} size='small' />
-          </CustomFeatureBox>
-        </Grid>
-
-        <Grid item md={4}>
-          <CustomFeatureBox>sdfsd</CustomFeatureBox>
-        </Grid>
-
-        <Grid item md={4}>
-          <CustomFeatureBox>sdfsd</CustomFeatureBox>
-        </Grid>
-      </Grid>
+      <Swiper
+        slidesPerView={3}
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
+        spaceBetween={0}
+      >
+        {feedbackArr?.map((singleFeedback: IFeedback) => (
+          <SwiperSlide key={singleFeedback?.id}>
+            <Feedback feedback={singleFeedback} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </Container>
   );
 }
