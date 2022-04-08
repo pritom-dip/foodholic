@@ -2,7 +2,7 @@ import '../../styles/globals.css';
 import { ThemeProvider } from '@mui/system';
 import theme from '@/utils/Theme';
 import DefaultLayout from '@/common/DefaultLayout';
-import { SnackbarProvider } from 'notistack';
+import { SnackbarProvider, useSnackbar } from 'notistack';
 import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
 
@@ -22,6 +22,10 @@ function MyApp({ Component, pageProps }: any) {
         maxSnack={3}
         preventDuplicate
         hideIconVariant
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right'
+        }}
         action={(key) => (
           <CloseIcon
             onClick={onClickDismiss(key)}
